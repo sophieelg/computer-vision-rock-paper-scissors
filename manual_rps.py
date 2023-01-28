@@ -5,7 +5,7 @@ import random
 
 options = ['Rock', 'Paper', 'Scissors']
 
-def get_compter_choice():
+def get_computer_choice():
     computer_choice = random.choice(options)
     return computer_choice
 
