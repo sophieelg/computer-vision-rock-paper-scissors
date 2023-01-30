@@ -6,38 +6,43 @@ import random
 
 def get_computer_choice():
     options = ['Rock', 'Paper', 'Scissors']
-    computer_choice = random.choice(options)
-    return computer_choice
+    computer = random.choice(options)
+    print(f'The computer chooses {computer}.')
+    return computer
 
 def get_user_choice():
     while True:
-        user_choice = input('Enter Rock, Paper or Scissors')
-        if user_choice not in ['Rock', 'Paper', 'Scissors']:
+        user = input('Enter Rock, Paper or Scissors')
+        if user not in ['Rock', 'Paper', 'Scissors']:
             print('You must enter either Rock, Paper or Scissors exactly.')
         else:
-            return user_choice
+            print(f'The user chooses {user}.')
+            return user
 
 def get_winner(computer_choice, user_choice):
     if computer_choice == user_choice:
         print('It is a tie!')
     elif user_choice == 'Rock':
         if computer_choice == 'Paper':
-            print('You lost')
+            print('You lost.')
         else:
             print('You won!')
     elif user_choice == 'Paper':
         if computer_choice == 'Scissors':
-            print('You lost')
+            print('You lost.')
         else:
             print('You won!')
     elif user_choice == 'Scissors':
         if computer_choice == 'Rock':
-            print('You lost')
+            print('You lost.')
         else:
             print('You won!')
+
 def play():
-    get_computer_choice()
-    get_user_choice()
+    computer_choice = get_computer_choice()
+    user_choice = get_user_choice()
     get_winner(computer_choice, user_choice)
 
 play()
+
+# %%
