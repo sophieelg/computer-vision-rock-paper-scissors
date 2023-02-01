@@ -34,6 +34,11 @@ while True:
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
+def get_prediction():
+    highest = np.argmax(prediction[0])
+    user_choice = options[highest]
+    return user_choice
+
 def get_computer_choice():
     computer = random.choice(options)
     print(f'The computer chooses {computer}.')
@@ -60,6 +65,7 @@ def get_winner(computer_choice, user_choice):
 
 def play():
     computer_choice = get_computer_choice()
+    user_choice = get_prediction()
     get_winner(computer_choice, user_choice)
 
 play()
